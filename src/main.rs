@@ -1,15 +1,6 @@
 struct Solution {}
 
 impl Solution {
-    // fn skip_identical_elems(mut i: usize, nums: &Vec<i32>) -> usize {
-    //     let elem = nums[i];
-    //     i = i + 1;
-    //     while i < nums.len() && nums[i] == elem {
-    //         i += 1;
-    //     }
-    //     i
-    // }
-
     pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
         let mut sorted = nums;
         sorted.sort();
