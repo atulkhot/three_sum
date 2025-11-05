@@ -73,6 +73,13 @@ mod tests {
         assert_eq!(result, expected);
     }
 
+    #[test]
+    fn test_one_sum_all_zeroes_at_the_end() {
+        let result = Solution::three_sum(vec![-10, -8, 5, -3, 0, 0, 0]);
+        let expected = vec![vec![0, 0, 0]];
+        assert_eq!(result, expected);
+    }
+
 }
 
 fn main() {
