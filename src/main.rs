@@ -34,13 +34,13 @@ impl Solution {
             } else {
                 result.push(vec![sorted[left], sorted[left + 1], sorted[i]]);
                 let elem = sorted[i];
-                let mut duplicate_succ_elems_found = false;
-                while i < num_elems && i+1 < num_elems && sorted[i+1] == elem {
-                    i += 1;
-                    duplicate_succ_elems_found = true;
-                }
-                if i == num_elems-1 && sorted[i] == elem && duplicate_succ_elems_found {
-                    break;
+                if i < num_elems && i+1 < num_elems && sorted[i+1] == elem {
+                    while i < num_elems && i+1 < num_elems && sorted[i+1] == elem {
+                        i += 1;
+                    }
+                    if i == num_elems-1 && sorted[i] == elem {
+                        break;
+                    }
                 }
                 continue;
             }
