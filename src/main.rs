@@ -80,6 +80,13 @@ mod tests {
         assert_eq!(result, expected);
     }
 
+    #[test]
+    fn test_one_sum_at_the_start() {
+        let result = Solution::three_sum(vec![-10, 10, 0, 9, 10, 110, 1110]);
+        let expected = vec![vec![-10, 0, 10]];
+        assert_eq!(result, expected);
+    }
+
 }
 
 fn main() {
