@@ -1,0 +1,116 @@
+sorted = [-5, -5, -4, -4, -1, -1, 0, 1, 2] 
+index  =   0,  1,  2,  3,  4,  5, 6, 7, 8
+len = 9
+
+left = 0
+i = left+2 i.e. i = 2
+sorted[left] + sorted[left+1] + sorted[i] = -14
+
+left = 0
+i = i+1; i = 3 - IF
+sorted[i] == sorted[i-1] so increment i till sorted[i] > sorted[i-1] and i < len
+i = i+1; i = 4 - as sorted[i] > sorted[i-1] BREAK
+
+Else 
+
+left = 0
+i = i+1; i = 4
+sorted[left] + sorted[left+1] + sorted[i] = -11
+
+left = 0
+i = i+1; i = 5
+sorted[left] + sorted[left+1] + sorted[i] = -11
+
+left = 0
+i = i+1; i = 6
+sorted[left] + sorted[left+1] + sorted[i] = -10
+
+left = 0
+i = i+1; i = 7
+sorted[left] + sorted[left+1] + sorted[i] = -9
+
+left = 0
+i = i+1; i = 8
+sorted[left] + sorted[left+1] + sorted[i] = -8
+
+Advance left, rewind i
+left = 1
+i = left+2 i.e. i = 3
+sorted[left] + sorted[left+1] + sorted[i] = -13
+
+
+sorted = [-5, -5, -4, -4, -1, -1, 0, 1, 2] 
+index  =   0,  1,  2,  3,  4,  5, 6, 7, 8
+
+left = 1
+i = i+1; i = 4
+sorted[left] + sorted[left+1] + sorted[i] = -10
+
+left = 1
+i = i+1; i = 5
+sorted[left] + sorted[left+1] + sorted[i] = -10
+
+left = 1
+i = i+1; i = 6
+sorted[left] + sorted[left+1] + sorted[i] = -9
+
+left = 1
+i = i+1; i = 7
+sorted[left] + sorted[left+1] + sorted[i] = -8
+
+left = 1
+i = i+1; i = 7
+sorted[left] + sorted[left+1] + sorted[i] = -7
+
+Advance left, rewind i
+left = 2
+i = left+2 i.e. i = 4
+sorted[left] + sorted[left+1] + sorted[i] = -9
+
+left = 2
+i = i+1 i.e. i = 5
+sorted[left] + sorted[left+1] + sorted[i] = -9
+
+left = 2
+i = i+1 i.e. i = 6
+sorted[left] + sorted[left+1] + sorted[i] = -8
+
+sorted = [-5, -5, -4, -4, -1, -1, 0, 1, 2] 
+index  =   0,  1,  2,  3,  4,  5, 6, 7, 8
+
+left = 2
+i = i+1 i.e. i = 7
+sorted[left] + sorted[left+1] + sorted[i] = -7
+
+left = 2
+i = i+1 i.e. i = 8
+sorted[left] + sorted[left+1] + sorted[i] = -6
+
+Advance left, rewind i
+left = 3
+i = left+2 i.e. i = 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

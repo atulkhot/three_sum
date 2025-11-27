@@ -1,0 +1,53 @@
+orig = [-1, 0, 1, 2, -1, -4]
+sorted = [-4, -1, -1, 0, 1, 2] 
+
+left = 0
+i = left+2 i.e. i = 2
+sorted[left] + sorted[left+1] + sorted[i] = -6
+
+left = 0
+i = i+1; i = 3
+sorted[left] + sorted[left+1] + sorted[i] = -5
+
+left = 0
+i = i+1; i = 4
+sorted[left] + sorted[left+1] + sorted[i] = -4
+
+left = 0
+i = i+1; i = 5
+sorted[left] + sorted[left+1] + sorted[i] = -3
+
+left = 1
+i = left+2, i.e. i = 3
+sorted[left] + sorted[left+1] + sorted[i] = -2
+
+left = 1
+i = i+1; i = 4
+sorted[left] + sorted[left+1] + sorted[i] = -1 
+
+left = 1
+i = i+1; i = 5
+sorted[left] + sorted[left+1] + sorted[i] = 0 (record elements at [left, left+1, i] as a candidate - [-1, -1, 2])
+
+skip consecutive elements equal to sorted[i] - i.e. skip any 2's - none here 
+left = 2
+i = left+2, i.e. i = 4
+sorted[left] + sorted[left+1] + sorted[i] = 0 (record elements at [left, left+1, i] as a candidate - [-1, 0, 1])
+
+sorted = [-4, -1, -1, 0, 1, 2] 
+No elements to skip 
+left = 2
+i = i+1; i = 5
+sorted[left] + sorted[left+1] + sorted[i] = 1
+
+left = 3
+i = left+2; i = 5
+sorted[left] + sorted[left+1] + sorted[i] = 3
+
+left = 4 but as left+1 (and hence left+2) is out of range we are done
+
+So the output is [[-1, -1, 2], [-1, 0, 1]]
+
+
+
+
