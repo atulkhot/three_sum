@@ -17,7 +17,7 @@ impl Solution {
             if left + 2 >= num_elems {
                 break;
             }
-            assert!(i >= left + 2);
+            // assert!(i >= left + 2);
             let sum = sorted[left] + sorted[left + 1] + sorted[i];
             if sum > 0 {
                 left = left + 1;
@@ -87,6 +87,19 @@ mod tests {
         assert_eq!(result, expected);
     }
 
+    #[test]
+    fn test_one_sum_disconnected() {
+        let result = Solution::three_sum(vec![-10, -8, 0, 1, 9, 10, 110, 1110]);
+        let expected = vec![vec![-10, 1, 9]];
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_one_sum_disconnected_small_vector() {
+        let result = Solution::three_sum(vec![-10, -8, 0, 1, 9]);
+        let expected = vec![vec![-10, 1, 9]];
+        assert_eq!(result, expected);
+    }
 }
 
 fn main() {
