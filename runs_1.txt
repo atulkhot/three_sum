@@ -7,7 +7,7 @@ i = left+2 i.e. i = 2
 sorted[left] + sorted[left+1] + sorted[i] = -14
 
 left = 0
-i = i+1; i = 3 - IF
+i = i+1; i = 3 
 sorted[i] == sorted[i-1] so increment i till sorted[i] > sorted[i-1] and i < len
 i = i+1; i = 4 - as sorted[i] > sorted[i-1] BREAK
 

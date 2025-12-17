@@ -1,0 +1,38 @@
+index  =    0,  1, 2, 3, 4
+sorted = [-10, -8, 0, 1, 9] 
+len    = 5
+
+left = 0
+k = 1
+i = k+1 i.e. i = 2
+sorted[left] + sorted[k] + sorted[i] = -18
+
+left = 0
+k = 1
+i = i + 1; i = 3
+sorted[left] + sorted[k] + sorted[i] = -17
+
+left = 0
+k = 1
+i = i + 1; i = 4
+sorted[left] + sorted[k] + sorted[i] = -9
+
+left = 0
+k = 2
+i = k + 1; i = 3
+sorted[left] + sorted[k] + sorted[i] = 
+    -10      +    0      +    1      = -9    
+
+left = 0
+k = 2
+i = i + 1; i = 4
+sorted[left] + sorted[k] + sorted[i] = 
+    -10      +    0      +    9      = -1    
+
+As i is last index, increment k
+left = 0
+k = k + 1; k = 3
+i = k + 1; i = 4
+sorted[left] + sorted[k] + sorted[i] = 
+    -10      +    1      +    9      = 0 (record elements at [left, k, i] as a candidate - [0, 3, 4])
+

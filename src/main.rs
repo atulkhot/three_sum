@@ -6,41 +6,55 @@ impl Solution {
         sorted.sort();
         let mut result: Vec<Vec<i32>> = vec![];
         let num_elems = sorted.len();
-        let mut left = 0;
-        let mut i = left + 1;
+        let mut l = 0;
+        let mut m = l + 1;
+        let mut r = m;
+
         loop {
-            i = i + 1; // invariant - i >= left+2
-            if i >= num_elems {
-                left = left + 1;
-                i = left + 2;
-            }
-            if left + 2 >= num_elems {
+            if l + 2 >= num_elems {
                 break;
             }
-            // assert!(i >= left + 2);
-            let sum = sorted[left] + sorted[left + 1] + sorted[i];
+            if sorted[l] > 0 {
+                // we cannot have any more elements summing to 0
+                break;
+            }
+            if m == l + 1 && m >= num_elems {
+                // we have only two elements left to check
+                break;
+            }
+            r += 1;
+
+            assert!(l != m && m != r);
+
+            if r >= num_elems {
+                if m >= num_elems {
+                    l += 1;
+                    m = l + 1;
+                    r = m;
+                } else {
+                    m += 1;
+                    r = m;
+                }
+                continue;
+            }
+            let sum = sorted[l] + sorted[m] + sorted[r];
             if sum > 0 {
-                left = left + 1;
-                if left + 2 >= num_elems {
-                    break;
-                }
-                if sorted[left] > 0 && sorted[left + 1] > 0 && sorted[left + 2] > 0 {
-                    break;
-                }
-                i = left + 1;
+                l += 1;
+                m = l + 1;
+                r = m;
                 continue;
             } else if sum < 0 {
                 continue;
             } else {
-                result.push(vec![sorted[left], sorted[left + 1], sorted[i]]);
-                let elem = sorted[i];
-                if i < num_elems && i+1 < num_elems && sorted[i+1] == elem {
-                    while i < num_elems && i+1 < num_elems && sorted[i+1] == elem {
-                        i += 1;
-                    }
-                    if i == num_elems-1 && sorted[i] == elem {
-                        break;
-                    }
+                /* here sum == 0 */
+                result.push(vec![sorted[l], sorted[m], sorted[r]]);
+                let elem = sorted[r];
+                while r + 1 < num_elems && sorted[r + 1] == elem {
+                    /* skip identical elements */
+                    r += 1;
+                }
+                if r == num_elems - 1 && sorted[r] == elem {
+                    break;
                 }
                 continue;
             }
